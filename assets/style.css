@@ -1,0 +1,223 @@
+:root {
+  /* --- Midnight Library Palette (Classic & Sophisticated) --- */
+  
+  /* Backgrounds */
+  --color-bg-primary: #1F1B1A; /* Very dark espresso/brown-black */
+  --color-bg-secondary: #2C2726; /* Dark taupe/warmer grey for cards */
+  
+  /* Text & Contrast */
+  --color-text-primary: #EDEAE5; /* Creamy off-white/parchment */
+  --color-text-secondary: #AFAAA7; /* Muted stone grey for supporting info */
+  
+  /* Actions & Status */
+  --color-button-primary: #ff7746;
+  --color-accent-primary: #D4A85C; /* Mature, classic gold/ochre for buttons */
+  --color-status-success: #7FBC59; /* Olive green */
+  --color-status-error: #CC6666; /* Deep muted red */
+  --color-border-subtle: #815c4f; /* Warm dark divider */
+  --color-bg-hover: #4b41407e;
+}
+
+/* --- STYLES --- */
+.search_box::placeholder {
+    color: var(--color-bg-primary);
+    padding: 5px;
+    font-size: small;
+}
+
+.sidebar_icon {
+    color: var(--color-status-error);
+}
+
+.sidebar {
+    /* Layout and positioning */
+    width: 250px; /* Adjust the desired width */
+    height: 100vh; /* Make the sidebar span the full viewport height */
+    position: fixed; /* Keep it in place while the user scrolls the main content */
+    top: 0;
+    left: 0;
+
+    /* --- ADDED FOR FLEX ALIGNMENT --- */
+    display: flex;             /* 1. Make it a flex container */
+    flex-direction: column;    /* 2. Stack items vertically */
+    justify-content: space-between; /* 3. Push the first item (top) and last item (bottom) to the edges */
+    /* -------------------------------- */
+
+    /* Styling */
+    background-color: var(--color-bg-secondary); /* A light grey background */
+
+    /* The Border */
+    border-right: 1px solid var(--color-border-subtle); /* 1 pixel solid light grey border on the right */
+
+    /* Optional: Shadow for a bit more depth */
+    box-shadow: 2px 0 5px rgba(248, 247, 247, 0.1);
+
+    /* Optional: For text/links inside */
+    color: var(--color-text-primary);
+
+}
+
+.sidebar_items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Equivalent to 'gap-2' (where 1 unit typically equals 0.25rem) */
+    padding: 1rem; /* Equivalent to 'p-4' (where 1 unit typically equals 0.25rem) */
+}
+
+.nav_item_active {
+    /* flex */
+    display: flex;
+
+    /* items-center */
+    align-items: center;
+
+    /* gap-3 (assuming a spacing scale where 1 unit is 0.25rem, so 3 is 0.75rem) */
+    gap: 0.75rem;
+
+    /* px-4 (padding-left and padding-right) */
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* py-2.5 (padding-top and padding-bottom) (2.5 is likely 0.625rem) */
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+
+    /* rounded-lg (assuming a typical Tailwind large border radius, e.g., 0.5rem) */
+    border-radius: 0.5rem;
+
+    /* bg-indigo-100 (assuming a specific indigo color variable or hex code) */
+    background-color: var(--color-button-primary); /* A common light indigo for Tailwind 100 */
+
+    /* text-indigo-700 (assuming a specific indigo color variable or hex code) */
+    color: var(--color-bg-secondary); /* A common dark indigo for Tailwind 700 */
+
+    /* font-semibold */
+    font-weight: 600;
+
+    border: 2px solid var(--color-border-subtle);
+    
+    box-shadow: 5px 5px 5px var(--color-bg-primary)
+}
+
+.nav_item_inactive:hover {
+    /* Example 1: Change background to a slightly darker shade (e.g., bg-indigo-200) */
+    background-color: var(--color-bg-hover);
+    
+    /* Example 2: Change text color to a slightly darker shade (e.g., text-indigo-800) */
+    color: var(--color-text-hover);
+    
+    /* Optional: Change the cursor to indicate it's clickable */
+    cursor: pointer; 
+}
+
+.nav_item_inactive {
+    /* flex */
+    display: flex;
+
+    /* items-center */
+    align-items: center;
+
+    /* gap-3 (assuming a spacing scale where 1 unit is 0.25rem, so 3 is 0.75rem) */
+    gap: 0.75rem;
+
+    /* px-4 (padding-left and padding-right) */
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* py-2.5 (padding-top and padding-bottom) (2.5 is likely 0.625rem) */
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+
+    /* rounded-lg (assuming a typical Tailwind large border radius, e.g., 0.5rem) */
+    border-radius: 0.5rem;
+
+    /* bg-indigo-100 (assuming a specific indigo color variable or hex code) */
+    background-color: var(--color-bg-secondary); /* A common light indigo for Tailwind 100 */
+
+    /* text-indigo-700 (assuming a specific indigo color variable or hex code) */
+    color: var(--color-text-secondary); /* A common dark indigo for Tailwind 700 */
+
+    /* font-semibold */
+    font-weight: 400;
+}
+
+.sidebar_bottom {
+    /* p-4 */
+    padding: 1rem;
+}
+
+.text_primary {
+    color: var(--color-text-primary);
+}
+
+.header_title {
+    font-size: large;;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px var(--color-bg-primary);
+}
+
+.search_box {
+    background-color: var(--color-text-secondary);
+    color: var(--color-bg-primary);
+    border-radius: 10px;
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: 5px 5px 5px var(--color-bg-primary)
+}
+
+.search_icon {
+    position: absolute; /* absolute */
+    right: 0.75rem; /* right-3 (assuming a default Tailwind spacing scale where 1 unit = 0.25rem, so 3 units = 0.75rem) */
+    top: 50%; /* top-1/2 */
+    transform: translateY(-50%); /* -translate-y-1/2 */
+    color: var(--color-border-subtle); /* text-gray-400 (using the default Tailwind v3 color for gray-400) */
+}
+
+.header_logo {
+    width: 50px;
+    border-radius: 10px;
+    border: 2px solid var(--color-border-subtle);
+    box-shadow: 5px 5px 5px var(--color-bg-primary)
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header_wrapper {
+    background-color: var(--color-bg-secondary);
+    height: 75px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content_wrapper {
+    /* Push content over to the right of the fixed sidebar */
+    margin-left: 250px; 
+    /* The rest of the screen height */
+    min-height: 100vh;
+    /* Use flexbox for vertical alignment (header then main content) */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Updated: Styles for your main content area */
+.main {
+    background: #2C2726;
+    background: linear-gradient(90deg, rgba(44, 39, 38, 1) 0%, rgba(129, 92, 79, 1) 100%);
+    /* Tell it to take up all available vertical space */
+    flex-grow: 1; 
+    /* Optional: Add some padding so the background is visible around content */
+    padding: 20px; 
+}
